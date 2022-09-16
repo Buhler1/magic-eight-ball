@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic 8 Ball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css" />
     <script src="./js/main.js"></script>
-</head>
-<body>
-    <div class="8ball-container">
-        <div class="outer-ball">
-            <div class="inner-ball">
-                <p id="8-ball-answer">8</p>
-            </div>
-        </div>
+  </head>
+  <body>
+    <div class="ball-container">
+      <div class="inner-ball">
+        <p id="ballAnswer">8</p>
+      </div>
     </div>
     <div class="input-container">
-        <input type="text" id="type-area" placeholder="Ask about your future!">
-        <button id="ask-here">Your fourtune awaits</button>
+      <input type="text" id="typeArea" placeholder="Ask about your future!" />
+      <button id="askHere" onclick="myFunction()">Your fourtune awaits</button>
     </div>
     <div class="prev-question">
-        <h2>Your Previous Questions</h2>
-        <p id="questions-asked"></p>
+      <h2>Your Previous Questions</h2>
+      <div id="questions-asked">
+        <div class="question-answers">
+            <p>test</p>
+            <p>test2</p>
+        </div>
+        <div class="question-answers">
+            <p>text</p>
+            <p>text2</p>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

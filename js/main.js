@@ -1,30 +1,54 @@
-let userName = 'Matt';
-userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!');
-const userQuestion = 'am I eating ice cream today?';
-console.log(`${userName} asked: ${userQuestion}`);
+const points = [
+  "It is certain",
+  "It is decidedly so",
+  "Reply hazy try again",
+  "Cannot predict now",
+  "Do not count on it",
+  "My sources say no",
+  "Outlook not so good",
+  "Signs point to yes"
+];
 
-let randomNumber = Math.floor(Math.random() * 8);
+let ballAnswer 
+function myFunction(){
+  points.sort(function(a,b){return 0.5 - Math.random()});
+  document.getElementById("ballAnswer").innerHTML=points[0];
+  ballAnswer = points[0];
+  document.getElementById("ballAnswer").style.fontSize="18px";
+  setTimeout(timeup, 4000);
 
-let eightBall = '';
-
-if (randomNumber === 0) {
-  eightBall = 'It is certain'
-} else if (randomNumber ===1) {
-  eightBall = 'It is decidedly so'
-} else if (randomNumber ===2) {
-  eightBall = 'Reply hazy try again'
-} else if (randomNumber ===3) {
-  eightBall = 'Cannot predict now'
-} else if (randomNumber ===4) {
-  eightBall = 'Do not count on it'
-} else if (randomNumber ===5) {
-  eightBall = 'My sources say no'
-} else if (randomNumber ===6) {
-  eightBall = 'Outlook not so good'
-} else if (randomNumber === 7) {
-  eightBall = 'Signs point to yes'
-} else {
-  console.log('something is broken')
+  function timeup(){
+    //document.getElementById("ballAnswer").innerHTML="8";
+    //document.getElementById("ballAnswer").style.fontSize ="125px";
+    //inputAnswer()
+    createDiv()
+    createP()
+    document.getElementById("typeArea").value="";
+  }
 }
 
-console.log(eightBall)
+function inputAnswer() {
+  const previousQuestion = document.getElementById("typeArea").value;
+  userQuestion.innerHTML = previousQuestion
+  const questionAsked = document.getElementById("questions-asked")
+  questionAsked.appendChild(userQuestion)
+}
+
+function createDiv() {
+  const div = document.createElement("div")
+  div.classList.add("question-answers")
+  document.getElementById("questions-asked").appendChild(div)
+}
+
+function createP() {
+  let userQuestion = document.createElement("p")
+  const ballResponse = document.createElement("p")
+  userQuestion.innerHTML=document.getElementById("typeArea").value;
+  let lastIndex = document.getElementsByClassName("question-answers").length-1;
+  const lastElement = document.getElementsByClassName("question-answers")[lastIndex];
+  userQuestion.classList.add("")
+  lastElement.appendChild(userQuestion)
+  ballResponse.innerHTML=ballAnswer;
+  ballResponse.classList.add("")
+  lastElement.appendChild(ballResponse)
+}

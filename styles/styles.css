@@ -1,16 +1,99 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-    display: grid;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.ball-container {
+  margin-top: 15vh;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.9);
+}
+
+.input-container {
+    display: flex;
     justify-content: center;
+}
+
+input {
+    position: absolute;
+    top: 65vh;
+    padding: 15px 50px 15px 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: left;
+    border: 0;
+}
+
+input:focus {
+    outline: 2px solid rgb(0, 0, 139);
+}
+
+button {
+    position: absolute;
+    top: 75vh;
+    padding: 10px 80px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: rgb(173, 216, 230);
+    border: 2px solid rgb(18, 0, 31);
+}
+
+button:hover {
+    background-color: rgb(87, 158, 182);
+}
+button:active {
+    background-color: rgb(25, 83, 102);
+}
+
+#ballAnswer {
+    width: 70px;
+    color: #000;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 125px;
+}
+
+.inner-ball {
+    width: 140px;
+    height: 140px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    
+    justify-content: center;
+}
+
+#questions-asked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.question-answers {
+  display: flex;
+  justify-content: space-between;
 }
