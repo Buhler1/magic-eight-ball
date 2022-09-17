@@ -27,24 +27,33 @@ function myFunction(){
 //puts users question below the 8 ball
 function inputAnswer() {
   const previousQuestion = document.getElementById("typeArea").value;
-  userQuestion.innerHTML = previousQuestion
-  const questionAsked = document.getElementById("questions-asked")
-  questionAsked.appendChild(userQuestion)
+  userQuestion.innerHTML = previousQuestion;
+  const questionAsked = document.getElementById("questions-asked");
+  questionAsked.appendChild(userQuestion);
 }
 // creates div for users questions to go into
 function createDiv() {
-  const div = document.createElement("div")
-  div.classList.add("question-answers")
-  document.getElementById("questions-asked").appendChild(div)
+  const div = document.createElement("div");
+  div.classList.add("question-answers");
+  document.getElementById("questions-asked").appendChild(div);
 }
 // inputs text of users questions 
 function createP() {
-  let userQuestion = document.createElement("p")
-  const ballResponse = document.createElement("p")
+  let userQuestion = document.createElement("p");
+  const ballResponse = document.createElement("p");
   userQuestion.innerHTML=document.getElementById("typeArea").value;
   let lastIndex = document.getElementsByClassName("question-answers").length-1;
   const lastElement = document.getElementsByClassName("question-answers")[lastIndex];
-  lastElement.appendChild(userQuestion)
+  lastElement.appendChild(userQuestion);
   ballResponse.innerHTML=ballAnswer;
-  lastElement.appendChild(ballResponse)
+  lastElement.appendChild(ballResponse);
+}
+// lets user press enter key when typing question instead of clicking on the button
+const enterButton = document.getElementById("askHere");
+enterButton.addEventListener('click', myFunction());
+
+document.getElementById("typeArea").onkeydown = function(e) {
+  if(e.key === "Enter") {
+    myFunction()
+  }
 }
