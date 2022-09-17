@@ -49,11 +49,11 @@ function createP() {
   lastElement.appendChild(ballResponse);
 }
 // lets user press enter key when typing question instead of clicking on the button
-const enterButton = document.getElementById("askHere");
-enterButton.addEventListener('click', myFunction());
+// const enterButton = document.getElementById("askHere");
+// enterButton.addEventListener('click', myFunction());
 
-document.getElementById("typeArea").onkeydown = function(e) {
-  if(e.key === "Enter") {
-    myFunction()
-  }
-}
+// document.getElementById("typeArea").onkeydown = function(e) {
+//   if(e.key === "Enter") {
+//     myFunction()
+//   }
+// }
